@@ -44,4 +44,5 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::group(['prefix'=>'comments'],function (){
         Route::post('create_comment','API\CommentController@create');
     });
+
 });

@@ -2,10 +2,8 @@
 
 namespace App\Models\Api;
 
+use App\Events\BioEvent;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 
 class BiographyModel extends Model
 {
@@ -15,5 +13,9 @@ class BiographyModel extends Model
     protected $fillable=[
         'user_id',
         'biography_content',
+    ];
+
+    protected $dispatchesEvents= [
+        'created'=>BioEvent::class
     ];
 }
